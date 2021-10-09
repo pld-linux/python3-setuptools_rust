@@ -18,10 +18,12 @@ URL:		https://rusthub.com/msabramo/setuptools-rust
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
 BuildRequires:	python-setuptools
+BuildRequires:	python-setuptools_scm
 %endif
 %if %{with python3}
 BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	python3-setuptools >= 1:46.0
+BuildRequires:	python3-setuptools_scm
 %endif
 %if %{with tests}
 BuildRequires:	rust-core
