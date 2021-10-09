@@ -30,6 +30,7 @@ BuildRequires:	rust-core
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
+Requires:	cargo
 Requires:	python3-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
