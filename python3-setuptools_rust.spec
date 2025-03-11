@@ -8,7 +8,7 @@ Summary:	Setuptools plugin to build Rust Python extensions
 Summary(pl.UTF-8):	Wtyczka setuptools do budowania rozszerzeń pythonowych w języku Rust
 Name:		python3-setuptools_rust
 Version:	1.10.2
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/setuptools-rust/
