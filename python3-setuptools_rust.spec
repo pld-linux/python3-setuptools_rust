@@ -17,23 +17,22 @@ Source0:	https://pypi.debian.net/setuptools_rust/setuptools_rust-%{version}.tar.
 URL:		https://rusthub.com/msabramo/setuptools-rust
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
-BuildRequires:	python3-modules >= 1:3.6
-BuildRequires:	python3-setuptools >= 1:46.1
+BuildRequires:	python3-modules >= 1:3.9
+BuildRequires:	python3-setuptools >= 1:62.4
 BuildRequires:	python3-setuptools_scm >= 3.4.3
-BuildRequires:	python3-toml >= 0.9.0
 %if %{with tests}
 BuildRequires:	rust-core
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
-BuildRequires:	python3-m2r2
-BuildRequires:	python3-sphinx_autodoc_typehints
-BuildRequires:	python3-sphinx_rtd_theme
-BuildRequires:	sphinx-pdg-3
+BuildRequires:	python3-furo >= 2024
+BuildRequires:	python3-myst_parser >= 4
+BuildRequires:	python3-sphinx_autodoc_typehints >= 3.1.0
+BuildRequires:	sphinx-pdg-3 >= 8.2.3
 %endif
 Requires:	cargo
-Requires:	python3-modules >= 1:3.6
+Requires:	python3-modules >= 1:3.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,9 +51,7 @@ Pythona tak łatwo, jakby były napisane w C.
 %py3_build_pyproject
 
 %if %{with tests}
-# use explicit plugins list for reliable builds (delete PYTEST_PLUGINS if empty)
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
-PYTEST_PLUGINS= \
 %{__python3} -m pytest tests
 %endif
 
